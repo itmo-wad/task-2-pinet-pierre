@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Chatbot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body style="text-align: center;">
+        <h1 style="margin: 0 auto; display: block; padding: 10px;">Chatbot</h1>
+        {% for message in messages %}
+        <div><p><b  class="{{ message.color_class }}">{{ message.author }}</b> : {{ message.text }}</p></div>
+        {% endfor %}
+        
+        <form method="POST" action="http://localhost:5000/" style="margin: 0 auto; display: block; width: 50%;">
+            <input type="text" name="new_message" class="input-lg">
+            <input type="submit" class="btn btn-success">
+        </form>
+    </body>
+</html>
